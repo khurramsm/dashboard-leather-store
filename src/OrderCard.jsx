@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 const OrderCard = () => {
   const [jacketOrderDetails, setJacketOrderDetails] = useState([]);
   const getOrderDetails = db.collection("orders");
+
   useEffect(() => {
     getOrderDetails.orderBy("orderTime", "inc").onSnapshot((snapshot) =>
       setJacketOrderDetails(
@@ -69,7 +70,6 @@ const OrderCard = () => {
                           {cSize.length > 0 && (
                             <p>
                               Customize Sizing Details:{" "}
-                              
                               <strong>
                                 <ul>
                                   {cSize.map((item, ind) => (
@@ -94,13 +94,13 @@ const OrderCard = () => {
                     <h2>Address</h2>
                     <div className="address-details-div">
                       <p>
-                        Name:  <strong>{data.name}</strong>
+                        Name: <strong>{data.name}</strong>
                       </p>
                       <p>
                         Email: <strong>{data.email}</strong>
                       </p>
                       <p>
-                        Address: 
+                        Address:
                         <strong className="ml-2">{data.address}</strong>
                       </p>
                       <p>
@@ -116,7 +116,8 @@ const OrderCard = () => {
                   </div>
                   <div className="col-md-12 text-center">
                     <h5>
-                      Order Total Price: <strong className="total">{data.totalPrice}</strong>
+                      Order Total Price:{" "}
+                      <strong className="total">{data.totalPrice}</strong>
                     </h5>
                   </div>
                 </>
