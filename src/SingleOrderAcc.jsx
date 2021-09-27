@@ -3,8 +3,15 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
+import { db } from "./firebase";
 
-const SingleOrderAcc = ({ orderDetails, data }) => {
+const SingleOrderAcc = ({ orderDetails, data, id }) => {
+  const updateState = (docId) => {
+    const getOrder = db.collection("orders").doc(docId);
+    getOrder.update({
+      completeOrder: true,
+    });
+  };
   return (
     <Accordion className="customizeProductButton bg-light">
       <AccordionSummary
@@ -108,7 +115,9 @@ const SingleOrderAcc = ({ orderDetails, data }) => {
               </h5>
             </div>
           </div>
-        <button className="orderCompBtn">Complete Order</button>
+          <button className="orderCompBtn" onClick={() => updateState(id)}>
+            Complete Order
+          </button>
         </div>
       </AccordionDetails>
     </Accordion>
