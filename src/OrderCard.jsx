@@ -6,7 +6,7 @@ const OrderCard = () => {
   const getOrderDetails = db.collection("orders");
 
   useEffect(() => {
-    getOrderDetails.orderBy("orderTime", "inc").onSnapshot((snapshot) =>
+    getOrderDetails.orderBy("orderTime", "desc").onSnapshot((snapshot) =>
       setJacketOrderDetails(
         snapshot.docs.map((doc) => ({
           id: doc.id,
