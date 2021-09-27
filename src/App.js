@@ -1,8 +1,8 @@
-import OrderCard from "./OrderCard";
+import SingleOrderDetails from "./SingleOrderDetails";
 function App() {
   return (
     <div className="App">
-      <OrderCard />
+      <SingleOrderDetails />
     </div>
   );
 }

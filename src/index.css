@@ -39,3 +39,43 @@ h2 {
   font-size: 1.5rem;
   font-weight: 600;
 }
+.customizeProductButton {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.945), rgb(0, 0, 0));
+  color: #fffff1;
+  outline: none !important;
+  border: none !important;
+  margin: 1rem auto;
+}
+.orderCompBtn, .orderActiveBtn{
+  background: linear-gradient(to left, rgba(0, 66, 17, 0.945), rgb(0, 100, 0));
+  width: 100%;
+  outline: none !important;
+  border: none !important;
+  color: #fffff1;
+  padding: .8rem;
+}
+.orderDeleteBtn{
+  background: linear-gradient(to left, rgba(66, 0, 3, 0.945), rgb(100, 0, 25));
+  width: 100%;
+  outline: none !important;
+  border: none !important;
+  color: #fffff1;
+  padding: .8rem;
+}
+
+.orderCompBtn:hover, .orderActiveBtn:hover{
+  background: linear-gradient(to right, rgba(0, 66, 17, 0.945), rgb(0, 100, 0));
+  width: 100%;
+  outline: none !important;
+  border: none !important;
+  color: #fffff1;
+  padding: .8rem;
+}
+.orderDeleteBtn:hover{
+  background: linear-gradient(to right, rgba(66, 0, 3, 0.945), rgb(100, 0, 25));
+  width: 100%;
+  outline: none !important;
+  border: none !important;
+  color: #fffff1;
+  padding: .8rem;
+}
