@@ -24,14 +24,18 @@ const SingleOrderDetails = () => {
       {jacketOrderDetails.map((order, ind) => {
         const { data, id } = order;
         const { orderDetails } = data;
+        
         return (
           <>
             {!data.completeOrder && (
               <>
-                <SingleOrderAcc orderDetails={orderDetails} data={data} id={id} />
+                <SingleOrderAcc
+                  orderDetails={orderDetails}
+                  data={data}
+                  id={id}
+                />
               </>
             )}
-           
           </>
         );
       })}
@@ -41,10 +45,13 @@ const SingleOrderDetails = () => {
         const { orderDetails } = data;
         return (
           <>
-            
             {data.completeOrder && (
               <>
-                <CompletedOrder orderDetails={orderDetails} data={data} id={id} />
+                <CompletedOrder
+                  orderDetails={orderDetails}
+                  data={data}
+                  id={id}
+                />
               </>
             )}
           </>

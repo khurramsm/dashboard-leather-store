@@ -4,6 +4,8 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
 import { db } from "./firebase";
+import moment from "moment";
+
 
 const CompletedOrder = ({ orderDetails, data, id }) => {
   const updateState = (docId) => {
@@ -15,6 +17,8 @@ const CompletedOrder = ({ orderDetails, data, id }) => {
   const onDelete = (docId) => {
     db.collection("orders").doc(docId).delete();
   };
+
+  const orderTiming = moment(data.orderTime.toDate().toString()).fromNow();
 
   return (
     <Accordion className="customizeProductButton bg-light">
@@ -109,6 +113,9 @@ const CompletedOrder = ({ orderDetails, data, id }) => {
                 </p>
                 <p>
                   Postal Code: <strong>{data.postalCode}</strong>
+                </p>
+                <p>
+                  Order Time: <strong>{orderTiming}</strong>
                 </p>
               </div>
             </div>
