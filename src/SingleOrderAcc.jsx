@@ -23,7 +23,7 @@ const SingleOrderAcc = ({ orderDetails, data, id }) => {
         className="accordionHeader"
       >
         <Typography className="text-light">
-          Order <span className="text-primary ml-3"> (NEW)</span>
+          Order <span className="text-info ml-3"> (NEW) {orderTiming}</span>
         </Typography>
       </AccordionSummary>
       <AccordionDetails className="bg-light">
@@ -57,9 +57,7 @@ const SingleOrderAcc = ({ orderDetails, data, id }) => {
                     <p>
                       Hardware Color: <strong>{orderItem.hardwareColor}</strong>
                     </p>
-                    <p>
-                      Studs Type: <strong>{orderItem.studsType}</strong>
-                    </p>
+                    
 
                     <p>
                       Size: <strong>{orderItem.size}</strong>

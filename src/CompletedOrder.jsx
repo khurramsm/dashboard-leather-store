@@ -63,10 +63,7 @@ const CompletedOrder = ({ orderDetails, data, id }) => {
                     <p>
                       Hardware Color: <strong>{orderItem.hardwareColor}</strong>
                     </p>
-                    <p>
-                      Studs Type: <strong>{orderItem.studsType}</strong>
-                    </p>
-
+                   
                     <p>
                       Size: <strong>{orderItem.size}</strong>
                     </p>
