@@ -57,7 +57,6 @@ const SingleOrderAcc = ({ orderDetails, data, id }) => {
                     <p>
                       Hardware Color: <strong>{orderItem.hardwareColor}</strong>
                     </p>
-                    
 
                     <p>
                       Size: <strong>{orderItem.size}</strong>
@@ -78,7 +77,10 @@ const SingleOrderAcc = ({ orderDetails, data, id }) => {
                       Gender: <strong>{orderItem.gender}</strong>
                     </p>
                     <p>
-                      Product Prize: <strong>$ {orderItem.productPrice}</strong>
+                      Quantity: <strong>{orderItem.quantityProduct}</strong>
+                    </p>
+                    <p>
+                      Product Prize: <strong>${orderItem.productPrice}</strong>
                     </p>
                   </div>
                 );
@@ -114,7 +116,7 @@ const SingleOrderAcc = ({ orderDetails, data, id }) => {
             <div className="col-md-12 text-center">
               <h5>
                 Order Total Price:{" "}
-                <strong className="total">{data.totalPrice}</strong>
+                <strong className="total">${data.totalPrice}</strong>
               </h5>
             </div>
           </div>

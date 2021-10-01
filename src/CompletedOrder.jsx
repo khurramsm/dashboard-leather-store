@@ -6,7 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import { db } from "./firebase";
 import moment from "moment";
 
-
 const CompletedOrder = ({ orderDetails, data, id }) => {
   const updateState = (docId) => {
     const getOrder = db.collection("orders").doc(docId);
@@ -63,7 +62,7 @@ const CompletedOrder = ({ orderDetails, data, id }) => {
                     <p>
                       Hardware Color: <strong>{orderItem.hardwareColor}</strong>
                     </p>
-                   
+
                     <p>
                       Size: <strong>{orderItem.size}</strong>
                     </p>
@@ -83,7 +82,10 @@ const CompletedOrder = ({ orderDetails, data, id }) => {
                       Gender: <strong>{orderItem.gender}</strong>
                     </p>
                     <p>
-                      Product Prize: <strong>$ {orderItem.productPrice}</strong>
+                      Quantity: <strong>{orderItem.quantityProduct}</strong>
+                    </p>
+                    <p>
+                      Product Prize: <strong>${orderItem.productPrice}</strong>
                     </p>
                   </div>
                 );
@@ -119,7 +121,7 @@ const CompletedOrder = ({ orderDetails, data, id }) => {
             <div className="col-md-12 text-center">
               <h5>
                 Order Total Price:{" "}
-                <strong className="total">{data.totalPrice}</strong>
+                <strong className="total">${data.totalPrice}</strong>
               </h5>
             </div>
           </div>
